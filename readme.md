@@ -1,0 +1,44 @@
+# Beamforming Deep Learning Empowers Drone Safety Communication! 3D Robust Beamforming to Fortify the Physical Layer Defenses [with MATLAB and Python codes attached]
+
+Personal Blog: https://www.cnblogs.com/EWFrontier  
+Deep Learning-Driven: Drone System Security with 3D Beamforming  
+1. Article Title: Deep Learning-Driven 3D Robust Beamforming for Drone System Security Communications  
+2. Abstract: Beamforming is a highly promising technology for enhancing the security of wireless transmissions, but designing optimal beamforming under certain channel state information (CSI) conditions presents challenges. This paper, from a physical layer security perspective, proposes a three-dimensional (3D) robust beamforming method for drone communication systems. Specifically, it aims to maximize the system's average confidential rate and trains a carefully designed neural network using partial CSI from both legitimate and eavesdropping drones to optimize the beamformers for confidential signals and artificial noise (AN). Simulation experiments show that the proposed deep learning (DL)-based approach achieves superior confidential rates compared to baseline schemes and offers more flexible beam steering.  
+Keywords: Beamforming; Drone (UAV); Physical Layer Security; Deep Learning (DL); Maximization of Confidential Rate  
+3. Introduction: Drones are seen as solutions for ubiquitous connectivity, which is one of the core objectives of fifth-generation (5G) and beyond 5G communication networks [1][2]. However, the line-of-sight (LoS) nature of air-to-ground (A2G) channels poses severe challenges to the secure transmission of drone communication systems. Additionally, drones are typical resource-constrained airborne platforms that must balance energy efficiency in their design of secure transmission measures.
+As a complement to traditional encryption methods, physical layer security technologies can achieve communication security through signal processing, modeling, and encoding, and alleviate the energy efficiency demands of future communication networks. Therefore, they have received extensive research in recent years [4][5]. Applying physical layer security to unmanned aerial vehicle (UAV) communication systems allows for a compromise between secure transmission and energy efficiency, becoming one of the hot research topics [6]-[10]. Due to the different angles of UAVs providing new design dimensions, beamforming (especially three-dimensional beamforming) is particularly suitable for enhancing the security transmission performance of UAV communication systems.
+Under perfect channel state information (CSI), optimal beamforming designs have been thoroughly studied, such as in literature [11][12]. Literature [11] proposed a method based on generalized eigenvalue decomposition (GEVD) to obtain the optimal beamforming vector, while literature [12] optimized the covariance matrix of confidential information, which is equivalent to beamforming design. However, for completely passive eavesdroppers, it is difficult to obtain perfect CSI; even for legitimate receivers, the assumption of perfect CSI is unrealistic due to delays and estimation errors. Therefore, it is necessary to study the optimization problem of beamforming vectors under partial or imperfect CSI conditions, which remains an open issue. On the other hand, previous studies mostly optimize the drone's transmit power, trajectory [8][9] or the beamforming of the onboard base station [10], but have not considered the optimization of ground base station beamforming.
+Inspired by the potential of neural networks in signal processing problems in recent years [13][14], this paper proposes a 3D robust beamforming method for secure communication in UAV systems. The main contributions are as follows:
+1.  
+Unlike literature [10], this paper considers the beamforming of the ground base station and realizes directional gain through a planar array;
+2.  
+By internally controlling the information beam in the vertical direction, it deeply explores the freedom brought by the drone to system design;
+3.
+Designed a novel neural network to address challenges posed by some CSI (not addressed in the literature [6]) and extended the application of deep learning to the field of drone safety transmission.
+IV. Methodology Overview (I) System Modeling and Problem Formulation The system considered includes a legitimate drone (Bob), a eavesdropping drone (Eve), and a ground station equipped with an uniform planar array (UPA) (Alice). Bob and Eve are equipped with uniform linear arrays (ULAs) with antennas, respectively, and their antenna spacing is, and . Considering the characteristics of air-to-ground channels, both legitimate and eavesdropping channels experience large scale path loss and small scale Rayleigh fading. A Cartesian coordinate system is established, with Alice at the origin, and Bob's coordinates known to Alice. The coordinates of Eve are represented using an error model (including the known coefficient, known part, and estimation error).
+Regarding the channel matrix, both the legitimate channel and the eavesdropping channel matrices include line-of-sight (LoS) components and non-line-of-sight (NLoS) components. The LoS component is determined by parameters such as azimuth angle and elevation angle, while the NLoS component includes both the known part and estimation error. Alice's transmitted signal consists of confidential information signals and artificial noise, satisfying the power constraint. Bob and Eve's received signals are affected by channel attenuation and additive white Gaussian noise (AWGN), with the system goal being to maximize the reachable confidential rate (, for Bob and Eve's reachable rates) through optimization of beamforming vectors and matrices, while also meeting the total transmit power constraint.
+(II) Neural Networks and Beamforming Design 1  
+Core idea: Robust beamforming design is divided into two stages: offline training and online deployment. In the offline stage, neural networks are fed with both partial CSI and perfect CSI, with partial CSI used to extract random channel features, and perfect CSI only used for calculating the loss during backpropagation; in the online stage, a robust beamforming scheme can be obtained with only partial CSI.
+The dense neural network architecture includes three fully connected dense layers (for feature extraction) and two Lambda layers. Among them, the Lambda layer 1 constructs real-valued auxiliary vectors and normalizes them while outputting sums to ensure compliance with the power emission constraints; the Lambda layer 2 defines the loss function for unsupervised learning.
+3
+Complexity analysis: The computational complexity of the proposed method during the online deployment phase is mainly from three dense layers, approximately 700,000 FLOPs; traditional GEVD-based methods have a lower complexity (about 20,000 real multiplications), but the proposed method can be accelerated by GPU computing.
+5. Conclusion This paper proposes a 3D robust beamforming method based on deep learning for drone communication systems. By meticulously designing and training neural networks, it effectively addresses challenges brought about by partial channel state information. Simulation results show that compared to benchmark methods, the robust beamforming based on deep learning has superior security performance, and 3D beamforming outperforms 2D beamforming. Additionally, this paper also confirms the potential application of deep learning in the field of physical layer security.
+Future research can be extended in two directions: 1) Robust beamforming for large-scale antenna arrays to form narrower beams for more precise pointing; 2) Joint design of beamforming and drone trajectory to ensure continuous secure transmission of mobile drones.
+★
+
+## Images
+
+![[Beamforming] Deep Learning Empowers Drone Safety Communication! 3D Robust Beamforming Builds a Physical-Layer Defense Line [with MATLAB, Python Codes]](01.jpg)
+![[Beamforming] Deep Learning Empowers Drone Safety Communication! 3D Robust Beamforming Builds a Physical-Layer Defense Line [with MATLAB, Python Codes]](02.jpg)
+![[Beamforming] Deep Learning Empowers Drone Safety Communication! 3D Robust Beamforming Builds a Physical-Layer Defense Line [with MATLAB, Python Codes]](03.jpg)
+![[Beamforming] Deep Learning Empowers Drone Safety Communication! 3D Robust Beamforming Builds a Physical-Layer Defense Line [with MATLAB, Python Codes]](04.jpg)
+![[Beamforming] Deep Learning Empowers Drone Safety Communication! 3D Robust Beamforming Builds a Physical-Layer Defense Line [with MATLAB, Python Codes]](05.jpg)
+
+<!-- PAYMENT_BLOCK -->
+
+## Get this dataset
+
+- Payment link (Stripe): [Buy now](https://buy.stripe.com/3cs8yP7sY87d0vu9AB)
+- Payment QR code: ![Payment QR code](pay.png)
+
+<!-- /PAYMENT_BLOCK -->
